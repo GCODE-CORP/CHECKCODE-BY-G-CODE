@@ -1,0 +1,106 @@
+/*
+========================================
+CUSTOM STYLES
+========================================
+*/
+body {
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.code-editor {
+    font-family: 'JetBrains Mono', monospace;
+    /* คืนค่า: ไม่ต้องมี z-index, color: transparent, หรือ caret-color พิเศษ */
+}
+
+/* ลบ: .editor-wrapper, .highlighting-container, .highlighting-content ออก */
+
+.line-numbers {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-right: 2px solid #cbd5e1;
+    text-align: right;
+    padding-right: 12px !important;
+    padding-left: 8px !important;
+    min-width: 60px;
+    font-weight: 500;
+    color: #64748b;
+    user-select: none;
+    white-space: pre;
+    line-height: 1.5;
+    transition: all 0.3s ease;
+    /* คืนค่า: ไม่ต้องมี z-index: 3 */
+}
+
+/* ลบ: Syntax Highlighting (Prism) Styles ออกทั้งหมด */
+
+
+/*
+========================================
+DARK MODE STYLES
+========================================
+*/
+.dark body {
+    background: #0f172a; /* slate-900 */
+}
+
+.dark .glass-effect {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .gradient-border-inner {
+    background: #1e293b; /* slate-800 */
+}
+
+.dark .line-numbers {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-right: 2px solid #334155;
+    color: #94a3b8;
+}
+
+/*
+========================================
+MOBILE VIEW SIMULATOR STYLES
+========================================
+*/
+.mobile-view #main-container {
+    max-width: 450px; /* Max width to simulate a phone screen */
+    margin-left: auto;
+    margin-right: auto;
+    border: 8px solid #333;
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+}
+
+.mobile-view .fixed {
+    right: calc(50% - 225px + 10px) !important;
+}
+
+
+/*
+========================================
+ANIMATIONS & EFFECTS
+========================================
+*/
+.fade-in { animation: fadeIn 0.3s ease-in; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.clickable-error { cursor: pointer; transition: all 0.2s ease; }
+.clickable-error:hover { transform: translateX(5px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
+.dark .clickable-error:hover { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); }
+.editor-highlight { animation: highlightPulse 0.7s ease-in-out; }
+@keyframes highlightPulse { 0% { box-shadow: 0 0 25px rgba(239, 68, 68, 0.4); } 100% { box-shadow: none; } }
+.glass-effect { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); transition: background 0.3s ease; }
+.gradient-border { background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899); padding: 2px; border-radius: 16px; }
+.gradient-border-inner { background: white; border-radius: 14px; transition: background 0.3s ease; }
+.floating-animation { animation: floating 3s ease-in-out infinite; }
+@keyframes floating { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+.glow-effect { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+.hover-scale { transition: transform 0.2s ease; }
+.hover-scale:hover { transform: scale(1.02); }
